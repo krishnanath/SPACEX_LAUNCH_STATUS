@@ -16,4 +16,9 @@ npm i concurrently
 cd client >> npm install apollo-boost react-apollo graphql
 
 npm install cors
+
+cd client >> npm install classnames moment react-moment
+
+cd client >> npm install react-router-dom
+
 ```
