@@ -97,3 +97,26 @@ resolve(parent, args) {
 query: RootQuery
   });
 
+//addfordailyact
+
+rockets: {
+  type: new GraphQLList(RocketType),
+  resolve(parent, args) {
+    return axios
+      .get('https://api.spacexdata.com/v3/rockets')
+      .then(res => res.data);
+  }
+},
+rocket: {
+  type: RocketType,
+  args: {
+    id: { type: GraphQLInt }
+  },
+  resolve(parent, args) {
+    return axios
+      .get(`https://api.spacexdata.com/v3/rockets/${args.id}`)
+      .then(res => res.data);
+  }
+}
+}
+});
